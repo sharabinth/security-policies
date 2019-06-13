@@ -17,6 +17,10 @@ variable "tfe_organization" {
   default     = "example_corp"
 }
 
+variable "self_name" {
+  default = "sentinel_policies"
+}
+
 provider "tfe" {
   hostname = "${var.tfe_hostname}"
   token    = "${var.tfe_token}"
