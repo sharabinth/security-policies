@@ -43,10 +43,12 @@ get_resources_all_modules = func(type) {
 
 # Allowed Types
 allowed_types = [
-	"t2.small",
-	"t2.medium",
-	"t2.large",
-	"t2.xlarge",
+    "t3.nano",
+    "t3.micro",
+    "t3.small",
+    "t3.medium",
+    "t3.large",
+    "t3.xlarge",
 ]
 
 # Rule to restrict instance types
