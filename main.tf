@@ -46,7 +46,6 @@ resource "tfe_policy_set" "global" {
     "${tfe_sentinel_policy.passthrough.id}",
     "${tfe_sentinel_policy.aws-block-allow-all-cidr.id}",
     "${tfe_sentinel_policy.aws-restrict-instance-type-default.id}",
-    "${tfe_sentinel_policy.aws-vpc-must-be-pmr-approved.id}",
   ]
 }
 
