@@ -21,6 +21,10 @@ variable "self_name" {
   default = "sentinel_policies"
 }
 
+variable "use_case_name" {
+  default = "ExampleTeam"
+}
+
 provider "tfe" {
   hostname = "${var.tfe_hostname}"
   token    = "${var.tfe_token}"
