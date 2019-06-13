@@ -23,10 +23,10 @@ provider "tfe" {
   version  = "~> 0.6"
 }
 
-#data "tfe_workspace_ids" "all" {
-#  names        = ["*"]
-#  organization = "${var.tfe_organization}"
-#}
+data "tfe_workspace_ids" "all" {
+  names        = ["*"]
+  organization = "${var.tfe_organization}"
+}
 
 locals {
   workspaces = "${data.tfe_workspace_ids.all.external_ids}" # map of names to IDs
@@ -34,7 +34,7 @@ locals {
 
 data "tfe_workspace" "self" {
   name = "${terraform.workspace}"
-  org = "${org}"
+  org = "${var.tfe_organization}"
 }
 
 resource "tfe_policy_set" "global" {
