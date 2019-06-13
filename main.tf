@@ -34,7 +34,7 @@ locals {
 
 data "tfe_workspace" "self" {
   name = "${terraform.workspace}"
-  org = "${var.tfe_organization}"
+  organization = "${var.tfe_organization}"
 }
 
 resource "tfe_policy_set" "global" {
