@@ -32,11 +32,6 @@ locals {
   workspaces = "${data.tfe_workspace_ids.all.external_ids}" # map of names to IDs
 }
 
-data "tfe_workspace" "self" {
-  name = "${terraform.workspace}"
-  organization = "${var.tfe_organization}"
-}
-
 resource "tfe_policy_set" "global" {
   name         = "global"
   description  = "Policies that should be enforced on ALL infrastructure."
@@ -106,7 +101,7 @@ resource "tfe_policy_set" "sentinel" {
   ]
 
   workspace_external_ids = [
-    "${local.workspaces["${terraform.workspace}"]}",
+    "${local.workspaces["${var.self_name}"]}",
   ]
 }
 
