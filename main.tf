@@ -61,7 +61,7 @@ resource "tfe_policy_set" "production" {
 
 
   workspace_external_ids = [
-    "${local.workspaces["ProfitApp-production"]}",
+    "${local.workspaces["${var.use_case_name}-production"]}",
   ]
 }
 
@@ -76,7 +76,7 @@ resource "tfe_policy_set" "development" {
   ]
 
   workspace_external_ids = [
-    "${local.workspaces["ProfitApp-development"]}",
+    "${local.workspaces["${var.use_case_name}-development"]}",
   ]
 }
 
@@ -90,7 +90,7 @@ resource "tfe_policy_set" "staging" {
   ]
 
   workspace_external_ids = [
-    "${local.workspaces["ProfitApp-staging"]}",
+    "${local.workspaces["${var.use_case_name}-staging"]}",
   ]
 }
 
