@@ -49,8 +49,15 @@ allowed_types = [
 	"t2.medium",
 	"t2.large",
 	"t2.xlarge",
+    "t3.nano",
+    "t3.micro",
+    "t3.small",
+    "t3.medium",
+    "t3.large",
+    "t3.xlarge",
 	"m4.large",
 	"m4.xlarge",
+    "m5.large",
 ]
 
 # Rule to restrict instance types
